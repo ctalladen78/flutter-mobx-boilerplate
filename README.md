@@ -21,6 +21,27 @@ https://pub.dev/packages/mobx_codegen
 
 `$ flutter packages pub run build_runner build`
 
+### mobx store template
+template model
+```
+// code gen needs this line
+part 'todo_store.g.dart';
+
+// This is the class used by rest of your codebase
+class TodoStore extends _TodoStore with _$TodoStore{}
+
+// The store-class
+abstract class _TodoStore with Store {
+  TodoStore(this.description);
+
+  @observable
+  String description = '';
+
+  @observable
+  bool done = false;
+}
+```
+
 ### actions streams in blocs
 * note single or broadcast stream
 * actions denote global updates to app state, not local tree
