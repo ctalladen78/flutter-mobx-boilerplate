@@ -42,4 +42,4 @@ app.*.map.json
 
 # code gen
 .dart_tool/
-stores/*.g.dart
+lib/stores/*.g.dart
